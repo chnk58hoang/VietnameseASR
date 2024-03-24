@@ -1,5 +1,6 @@
 nemo_toolkit[all]
 omegaconf==2.3.0
+Cython==3.0.9
 pytorch_lightning==2.2.1
 sox==1.4.1
 tokenizers==0.15.2
