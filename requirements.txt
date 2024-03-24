@@ -1,4 +1,4 @@
-nemo_toolkit['asr']
+nemo_toolkit[all]
 omegaconf==2.3.0
 pytorch_lightning==2.2.1
 sox==1.4.1
