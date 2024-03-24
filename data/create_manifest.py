@@ -1,8 +1,21 @@
 from tqdm import tqdm
 import argparse
 import json
-import sox
+import librosa
 import os
+
+
+def get_duration(file_path: str):
+    """get duration of audio file
+
+    Args:
+        file_path (str): path to audio file
+
+    Returns:
+        float: duration of audio file
+    """
+    y, sr = librosa.load(file_path, sr=16000)
+    return librosa.get_duration(y=y, sr=sr)
 
 
 def create_manifest(data_dir: str,
@@ -24,7 +37,7 @@ def create_manifest(data_dir: str,
                 f_text.close()
                 data = {'audio_filepath': file_path,
                         'text': text,
-                        "duration": sox.file_info.duration(file_path)}
+                        "duration": get_duration(file_path)}
                 f.write(json.dumps(data) + '\n')
     f.close()
 
