@@ -1,0 +1,6 @@
+nemo_toolkit==1.23.0rc0
+omegaconf==2.3.0
+pytorch_lightning==2.2.1
+sox==1.4.1
+tokenizers==0.15.2
+tqdm==4.66.2
