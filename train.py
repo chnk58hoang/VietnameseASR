@@ -16,6 +16,7 @@ if __name__ == '__main__':
     parser.add_argument('--acc_grad', type=int, required=False, default=2, help='accumulation gradient steps')
     parser.add_argument('--precision', type=int, required=False, choices=[32, 16, 'bf16'] ,default=16,  help='weight precision')
     parser.add_argument('--resume', type=str, required=False, help='resume training from a checkpoint')
+    parser.add_argument('--num_shards', type=int, required=False, help='number of shards in the tarred dataset')
     args = parser.parse_args()
 
     config = load_config(args)
