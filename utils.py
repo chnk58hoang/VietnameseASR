@@ -34,7 +34,7 @@ def get_all_manifest_files(data_dir: str) -> List[List[str]]:
     """
     all_manifest_files = []
     for subdir in os.listdir(data_dir):
-        manifest_file = os.path.join(data_dir, subdir, f'tarred_audio_manifest.json')
+        manifest_file = os.path.join(data_dir, subdir, 'tarred_audio_manifest.json')
         all_manifest_files.append([manifest_file])
     return all_manifest_files
 
@@ -57,7 +57,7 @@ def load_config(args):
     if args.model_size == 'medium':
         config.model.encoder.n_heads = 4
         config.model.encoder.n_layers = 18
-        config.model.decoder.d_model = 256
+        config.model.encoder.d_model = 256
     elif args.model_size == 'large':
         config.model.encoder.n_heads = 8
         config.model.encoder.n_layers = 18
@@ -65,11 +65,11 @@ def load_config(args):
     elif args.model_size == 'xlarge':
         config.model.encoder.n_heads = 8
         config.model.encoder.n_layers = 24
-        config.model.decoder.d_model = 1024
+        config.model.encoder.d_model = 1024
     elif args.model_size == 'small':
         config.model.encoder.n_heads = 4
         config.model.encoder.n_layers = 16
-        config.model.decoder.d_model = 176
+        config.model.encoder.d_model = 176
 
     return config
 
