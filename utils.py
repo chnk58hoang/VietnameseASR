@@ -1,5 +1,5 @@
 from omegaconf import OmegaConf
-import nemo.collections.asr.models as models
+import nemo.collections.asr as nemo_asr
 from typing import List
 import os
 
@@ -75,6 +75,6 @@ def load_config(args):
 
 
 def build_model(config):
-    model = models.EncDecCTCModelBPE(cfg=config.model)
+    model = nemo_asr.models.EncDecCTCModelBPE(cfg=config.model)
     return model
 

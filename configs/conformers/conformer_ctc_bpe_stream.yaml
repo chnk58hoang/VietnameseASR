@@ -56,7 +56,7 @@ model:
   # recommend small vocab size of 128 or 256 when using 4x sub-sampling
   # you may find more detail on how to train a tokenizer at: /scripts/tokenizers/process_asr_text_tokenizer.py
   tokenizer:
-    dir: ???  # path to directory which contains either tokenizer.model (bpe) or vocab.txt (wpe)
+    dir: tokenizer/tokenizer_model/tokenizer_spe_bpe_v1024  # path to directory which contains either tokenizer.model (bpe) or vocab.txt (wpe)
     type: bpe  # Can be either bpe (SentencePiece tokenizer) or wpe (WordPiece tokenizer)
 
   preprocessor:
@@ -175,8 +175,8 @@ trainer:
   max_epochs: 1000
   max_steps: -1 # computed at runtime if not set
   val_check_interval: 1.0 # Set to 0.25 to check 4 times per epoch, or an int for number of iterations
-  accelerator: auto
-  strategy: ddp
+  accelerator: gpu
+  strategy: auto
   accumulate_grad_batches: 1
   gradient_clip_val: 1.0
   precision: 32 # 16, 32, or bf16
