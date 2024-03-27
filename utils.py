@@ -2,6 +2,7 @@ from omegaconf import OmegaConf
 import nemo.collections.asr as nemo_asr
 from typing import List
 import os
+from datasets.distributed import split_dataset_by_node
 
 
 def get_all_tar_files(data_dir: str,
