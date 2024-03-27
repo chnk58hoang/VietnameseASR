@@ -32,7 +32,7 @@ model:
     shuffle_n: 2048
     # bucketing params
     buckets_num: 4
-    bucketing_batch_size: [32,24,16,4]
+    bucketing_batch_size: [32,16,8,2]
     bucketing_strategy: "synced_randomized"
 
   validation_ds:
